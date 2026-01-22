@@ -6,7 +6,7 @@ class Program
         {
             DisplayWelcome();
 
-            string userName = PromptUserName();
+            string username = PromptUserName();
             int favoriteNumber = PromptUserNumber();
 
             int birthYear;
@@ -14,7 +14,7 @@ class Program
 
             int squaredNumber = SquareNumber(favoriteNumber);
 
-            DisplayResult(userName, squaredNumber, birthYear);
+            DisplayResult(username, squaredNumber, birthYear);
         }
 
         static void DisplayWelcome()
