@@ -5,7 +5,8 @@ using System.IO;
 class Journal
 {
     private List<Entry> entries = new List<Entry>();
-    private string filename = "Journal.txt";
+    private string filename = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Journal.txt");
+
 
     public void AddEntry(string prompt, string response)
     {
@@ -29,9 +30,7 @@ class Journal
         }
     }
 
-public void SaveEntries()
-{
-    try
+    public void SaveEntries()
     {
         using (StreamWriter outputFile = new StreamWriter(filename))
         {
@@ -40,14 +39,8 @@ public void SaveEntries()
                 outputFile.WriteLine($"{entry.Date}~{entry.Prompt}~{entry.Response}");
             }
         }
-        Console.WriteLine($"Journal saved to {filename}\n");
+        Console.WriteLine("Journal saved.\n");
     }
-    catch (Exception ex)
-    {
-        Console.WriteLine($"Error saving: {ex.Message}");
-    }
-}
-
     public void LoadEntries()
     {
         if (File.Exists(filename))
