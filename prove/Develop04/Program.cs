@@ -45,7 +45,7 @@ private BreathingActivity _breathing;
             else if (choice == "4")
             {
                 Console.WriteLine();
-                Console.WriteLine("Goodbye! Keep taking time for yourself.");
+                Console.WriteLine("Goodbye.");
                 Console.WriteLine();
                 break;
             }
